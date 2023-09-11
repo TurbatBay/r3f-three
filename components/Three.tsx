@@ -36,7 +36,7 @@ function MyAnimatedBox() {
 
   return (
     <section className='h-screen '>
-      <Canvas dpr={1} shadows camera={{ position: [0, 0, 30], fov: 45 }}>
+      <Canvas dpr={1} shadows camera={{ position: [-2, 0, 32], fov: 45 }}>
         <color attach='background' args={['#d1d0d4']} />
         <ambientLight intensity={1} />
         <pointLight
@@ -177,7 +177,7 @@ function MyAnimatedBox() {
 
           {/* Static Sphere */}
 
-          <mesh castShadow receiveShadow position={[-3, -5.5, 4]}>
+          <mesh castShadow receiveShadow position={[-4, -5.5, 4]}>
             <sphereGeometry args={[2, 16, 16]} />
             <meshPhysicalMaterial
               color={'white'}
@@ -276,8 +276,8 @@ function MyAnimatedBox() {
           </group>
 
           {/* Shilen bagna */}
-          <group position={[-2, -4, 2]}>
-            <Tube args={[curve, 1, 0.5, 4]} castShadow receiveShadow>
+          <group position={[-2, -3.5, 2]}>
+            <Tube args={[curve, 2, 0.5, 8]} castShadow receiveShadow>
               <meshPhysicalMaterial
                 transparent
                 roughness={0.14}
@@ -307,15 +307,11 @@ function MyAnimatedBox() {
               receiveShadow
               rotation={[Math.PI / 2, 0, 0]}
             >
-              <MeshTransmissionMaterial
-                transparent
-                resolution={1024}
-                thickness={6}
-                anisotropy={0.1}
-                chromaticAberration={0.3}
-                distortionScale={0}
-                temporalDistortion={0}
-                side={THREE.DoubleSide}
+              <meshPhysicalMaterial
+                color={'white'}
+                toneMapped={false}
+                metalness={0.2}
+                roughness={0}
               />
             </Box>
             <Box
@@ -325,11 +321,15 @@ function MyAnimatedBox() {
               castShadow
               receiveShadow
             >
-              <meshPhysicalMaterial
-                color={'white'}
-                toneMapped={false}
-                metalness={0.2}
-                roughness={0}
+              <MeshTransmissionMaterial
+                transparent
+                resolution={1024}
+                thickness={6}
+                anisotropy={0.1}
+                chromaticAberration={0.3}
+                distortionScale={0}
+                temporalDistortion={0}
+                side={THREE.DoubleSide}
               />
             </Box>
           </group>

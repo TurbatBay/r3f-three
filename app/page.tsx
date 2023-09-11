@@ -8,10 +8,8 @@ export default function Home() {
   return (
     <main className='container mx-auto'>
       {/* <Navbar /> */}
-      {/* <MyAnimatedBox /> */}
-      <Hero />
-      {/* <Test /> */}
-      {/* Hello */}
+      <MyAnimatedBox />
+      {/* <Hero /> */}
     </main>
   )
 }
