@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import asterisk from '../public/asterisk.png'
@@ -27,21 +28,22 @@ const Hero = () => {
             </button>
           </div>
           <div>
-            <div className='text-[6.2rem]  font-semibold mb-[-3rem]  text-[#212025]'>
-              Performance
+            <div className='overflow-hidden text-[6.2rem]  font-semibold mb-[-3rem]  text-[#212025]'>
+              <div className='performance mb-[-3rem]'>Performance</div>
+              <div className='opti'>Optimization</div>
             </div>
-            <div className='text-[6.2rem] font-semibold  text-[#212025]'>
+
+            {/* <div className='  text-[6.2rem] font-semibold  text-[#212025]'>
               {' '}
-              Optimization
-            </div>
+            </div> */}
           </div>
-          <div className='flex justify-between items-center w-70%'>
+          <div className='flex justify-between items-center w-60%'>
             <Image src={asterisk} alt='asterisk' width={50} height={50} />
             <p className='w-[40%] text-sm tracking-tighter'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione
               earum reprehenderit nulla qui ipsum maxim
             </p>
-            <button className='bg-white opacity-50 hover:opacity-100 border rounded-full text-[#212025] px-4 py-2 m-2 w-[12rem] h-20 flex items-center justify-center'>
+            <button className='bg-white opacity-50 hover:opacity-100 border rounded-full text-[#212025] px-4 mr-12 py-2 m-2 w-[12rem] h-20 flex items-center justify-center'>
               <FaArrowLeftLong style={{ transform: 'scaleX(-1)' }} />
             </button>
           </div>
@@ -72,8 +74,8 @@ const Hero = () => {
           <Image
             src={'/wave.jpg'}
             alt={'wave card pic'}
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             className='w-full h-[60%] object-contain rounded-[50px]'
           />
         </div>

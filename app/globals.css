@@ -22,3 +22,33 @@ body {
   color: black;
   background: transparent;
 }
+
+.performance {
+  animation: perfo 2s ease;
+  position: relative;
+}
+@keyframes perfo {
+  from {
+    opacity: 0;
+    bottom: -140px;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+.opti {
+  animation: perfo 2.5s ease;
+  position: relative;
+}
+@keyframes perfo {
+  from {
+    opacity: 0;
+    bottom: -140px;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}

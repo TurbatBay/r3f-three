@@ -26,6 +26,7 @@ import BouncingCylinder from './BouncingCylinder'
 import GlassCylinder from './GlassCylinder'
 import { CatmullRomCurve3 } from 'three'
 import * as THREE from 'three'
+import StaticSphere from './StaticSphere'
 
 function MyAnimatedBox() {
   const curve = new CatmullRomCurve3([
@@ -361,21 +362,7 @@ function MyAnimatedBox() {
                   roughness={0.5}
                 />
               </mesh> */}
-              <mesh position={[0, 0, -1.2]} rotation={[Math.PI / 2, 2, 0]}>
-                <sphereGeometry args={[1, 16, 16]} />
-                <MeshReflectorMaterial
-                  blur={[400, 100]}
-                  resolution={1024}
-                  mixBlur={1}
-                  mixStrength={5}
-                  depthScale={1}
-                  minDepthThreshold={0.85}
-                  color='white'
-                  metalness={0.8}
-                  roughness={0.2}
-                  mirror={0}
-                />
-              </mesh>
+              <StaticSphere />
             </Box>
           </group>
           <group>
