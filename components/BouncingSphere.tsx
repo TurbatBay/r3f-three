@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useFrame, useLoader } from '@react-three/fiber'
 import { Mesh, TextureLoader } from 'three'
 
@@ -7,6 +7,7 @@ type BouncingSphereProps = {
   sphereSize: number
   direction: number // Add a direction prop in radians
   xSpeed: number // Add a speed factor for the X-axis
+  ref: any
 }
 
 function BouncingSphere({

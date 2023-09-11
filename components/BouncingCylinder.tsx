@@ -23,10 +23,7 @@ function BouncingCylinder({
 
   return (
     <mesh ref={cylinderRef} castShadow receiveShadow position={[0, 30, 0]}>
-      <cylinderGeometry
-        radius={50}
-        args={[cylinderSize, cylinderSize, 0.5, 32]}
-      />
+      <cylinderGeometry args={[cylinderSize, cylinderSize, 0.5, 32]} />
       <meshPhysicalMaterial
         color={'white'}
         toneMapped={false}

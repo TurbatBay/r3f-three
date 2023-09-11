@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section className='relative h-screen font-body'>
       <MyAnimatedBox />
-
+      <Navbar />
       <div className=' flex justify-between  text-[#212127] w-full items-center  mt-10 p-10  absolute top-0 left-0'>
         {/* LEFT SIDE CONTENT */}
 
