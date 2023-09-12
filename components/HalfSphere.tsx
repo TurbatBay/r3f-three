@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { DoubleSide } from 'three'
 import CirleRotating from './CircleRotating'
 
-function HalfSphere({ position }) {
+function HalfSphere({ position }: any) {
   const meshRef = useRef()
 
   useFrame(() => {

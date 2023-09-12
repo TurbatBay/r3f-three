@@ -1,22 +1,17 @@
 'use client'
-import React, { useRef } from 'react'
-import { Canvas, useLoader } from '@react-three/fiber'
+import React from 'react'
+import { Canvas } from '@react-three/fiber'
 import {
   Gltf,
   OrbitControls,
-  Stars,
-  Stage,
   Plane,
   Cylinder,
   MeshTransmissionMaterial,
   Tube,
   Box,
   ContactShadows,
-  Environment,
   Circle,
-  Lightformer,
   RoundedBox,
-  useTexture,
   MeshReflectorMaterial,
 } from '@react-three/drei'
 import Sphere from './Sphere'
@@ -37,15 +32,23 @@ function MyAnimatedBox() {
 
   return (
     <section className='h-screen '>
-      <Canvas dpr={1} shadows camera={{ position: [-2, 0, 32], fov: 45 }}>
+      <Canvas dpr={1} shadows camera={{ position: [0, -2, 28], fov: 45 }}>
         <color attach='background' args={['#d1d0d4']} />
-        <ambientLight intensity={1} />
-        <pointLight
-          intensity={3500}
-          position={[-20, 30, 15]}
+        <ambientLight intensity={0.5} />
+        <spotLight
+          intensity={2000}
+          position={[0, 10, 50]}
           castShadow
           color='white'
           decay={2}
+        />
+        <spotLight
+          intensity={2400}
+          position={[-20, 20, 19]}
+          castShadow
+          color='white'
+          distance={300}
+          angle={10}
         />
         {/* 
         <spotLight
@@ -151,6 +154,7 @@ function MyAnimatedBox() {
               sphereSize={0.7}
               direction={Math.PI / -2}
               xSpeed={1}
+              roughness={0.6}
             />
           </group>
 
@@ -162,6 +166,7 @@ function MyAnimatedBox() {
               sphereSize={1.5}
               direction={Math.PI / 1}
               xSpeed={0.1}
+              roughness={5}
             />
           </group>
 
@@ -173,12 +178,13 @@ function MyAnimatedBox() {
               sphereSize={3}
               direction={Math.PI / -5}
               xSpeed={0.3}
+              roughness={0.1}
             />
           </group>
 
           {/* Static Sphere */}
 
-          <mesh castShadow receiveShadow position={[-4, -5.5, 4]}>
+          <mesh castShadow receiveShadow position={[-3, -5.5, 4]}>
             <sphereGeometry args={[2, 16, 16]} />
             <meshPhysicalMaterial
               color={'white'}

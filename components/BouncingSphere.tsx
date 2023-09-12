@@ -7,7 +7,7 @@ type BouncingSphereProps = {
   sphereSize: number
   direction: number // Add a direction prop in radians
   xSpeed: number // Add a speed factor for the X-axis
-  ref: any
+  roughness: number
 }
 
 function BouncingSphere({
@@ -15,6 +15,7 @@ function BouncingSphere({
   sphereSize,
   direction,
   xSpeed,
+  roughness,
 }: BouncingSphereProps) {
   const sphereRef = useRef<Mesh>()
 
@@ -37,7 +38,7 @@ function BouncingSphere({
         color={'white'}
         toneMapped={false}
         metalness={0.2}
-        roughness={0}
+        roughness={roughness}
       />
     </mesh>
   )
