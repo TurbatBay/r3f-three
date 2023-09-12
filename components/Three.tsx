@@ -32,27 +32,27 @@ function MyAnimatedBox() {
 
   return (
     <section className='h-screen '>
-      <Canvas dpr={1} shadows camera={{ position: [0, -2, 28], fov: 45 }}>
+      <Canvas dpr={1} shadows camera={{ position: [0, -2, 30], fov: 46 }}>
         <color attach='background' args={['#d1d0d4']} />
         <ambientLight intensity={0.5} />
         <spotLight
-          intensity={2000}
-          position={[0, 10, 50]}
+          intensity={3000}
+          position={[10, 4, 50]}
           castShadow
           color='white'
           decay={2}
         />
         <spotLight
-          intensity={2400}
-          position={[-20, 20, 19]}
+          intensity={3000}
+          position={[-20, 30, 35]}
           castShadow
           color='white'
           distance={300}
           angle={10}
         />
-        {/* 
-        <spotLight
-          intensity={20000}
+
+        {/* <spotLight
+          intensity={4000}
           position={[-40, 30, 40]}
           castShadow
           color='white'
@@ -60,7 +60,7 @@ function MyAnimatedBox() {
           angle={5}
         /> */}
         <spotLight
-          intensity={3000}
+          intensity={5000}
           position={[60, 60, -60]}
           castShadow
           color='white'
@@ -69,7 +69,7 @@ function MyAnimatedBox() {
         />
         {/* ard tal */}
         <spotLight
-          intensity={5000}
+          intensity={7000}
           position={[0, 60, -60]}
           castShadow
           color='white'
@@ -178,7 +178,7 @@ function MyAnimatedBox() {
               sphereSize={3}
               direction={Math.PI / -5}
               xSpeed={0.3}
-              roughness={0.1}
+              roughness={0}
             />
           </group>
 
@@ -363,9 +363,9 @@ function MyAnimatedBox() {
               <StaticSphere />
             </Box>
           </group> */}
-          <group position={[-8, -5.8, 0]} receiveShadow castShadow>
+          <group position={[-7.5, -5.8, 0]} receiveShadow castShadow>
             <Box
-              args={[3.4, 3.4, 0.3]}
+              args={[2.5, 2.5, 0.3]}
               castShadow
               receiveShadow
               rotation={[Math.PI / 2, 0, 0]}

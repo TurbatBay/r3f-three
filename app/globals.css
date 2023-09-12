@@ -26,6 +26,7 @@ body {
 .performance {
   animation: perfo 2s ease;
   position: relative;
+  animation-delay: 10s;
 }
 @keyframes perfo {
   from {
@@ -41,6 +42,7 @@ body {
 .opti {
   animation: perfo 2.5s ease;
   position: relative;
+  animation-delay: 10s;
 }
 @keyframes perfo {
   from {
