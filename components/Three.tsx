@@ -337,6 +337,26 @@ function MyAnimatedBox() {
 
           {/* LEFT SILVER STATIC BALL */}
 
+          {/* <group position={[-8, -5.8, 0]} receiveShadow castShadow>
+            <Box
+              args={[3.4, 3.4, 0.3]}
+              castShadow
+              receiveShadow
+              rotation={[Math.PI / 2, 0, 0]}
+            >
+              <MeshTransmissionMaterial
+                resolution={1024}
+                thickness={6}
+                anisotropy={0.1}
+                chromaticAberration={0.3}
+                distortionScale={0}
+                temporalDistortion={0}
+                side={THREE.DoubleSide}
+              />
+           
+              <StaticSphere />
+            </Box>
+          </group> */}
           <group position={[-8, -5.8, 0]} receiveShadow castShadow>
             <Box
               args={[3.4, 3.4, 0.3]}
@@ -362,7 +382,21 @@ function MyAnimatedBox() {
                   roughness={0.5}
                 />
               </mesh> */}
-              <StaticSphere />
+              <mesh position={[0, 0, -1.2]} rotation={[Math.PI / 2, 2, 0]}>
+                <sphereGeometry args={[1, 16, 16]} />
+                <MeshReflectorMaterial
+                  blur={[400, 100]}
+                  resolution={1024}
+                  mixBlur={1}
+                  mixStrength={5}
+                  depthScale={1}
+                  minDepthThreshold={0.85}
+                  color='white'
+                  metalness={0.8}
+                  roughness={0.2}
+                  mirror={0}
+                />
+              </mesh>
             </Box>
           </group>
           <group>
